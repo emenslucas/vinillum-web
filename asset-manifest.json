@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/vinillum-web/static/css/main.aa07fe97.css",
+    "main.js": "/vinillum-web/static/js/main.fac19dd0.js",
+    "static/js/453.8f96cb0e.chunk.js": "/vinillum-web/static/js/453.8f96cb0e.chunk.js",
+    "static/media/formbkg.svg": "/vinillum-web/static/media/formbkg.0ba53bd18b827680cff3.svg",
+    "static/media/homebkg.svg": "/vinillum-web/static/media/homebkg.2fc88536c208b9c32747.svg",
+    "index.html": "/vinillum-web/index.html",
+    "main.aa07fe97.css.map": "/vinillum-web/static/css/main.aa07fe97.css.map",
+    "main.fac19dd0.js.map": "/vinillum-web/static/js/main.fac19dd0.js.map",
+    "453.8f96cb0e.chunk.js.map": "/vinillum-web/static/js/453.8f96cb0e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa07fe97.css",
+    "static/js/main.fac19dd0.js"
+  ]
+}
