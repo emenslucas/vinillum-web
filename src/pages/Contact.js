@@ -75,7 +75,7 @@ const Contact = forwardRef((props, ref) => {
   const successStyle = {
     opacity: showSuccessMessage ? 1 : 0,
     transition: 'opacity 0.5s ease',
-    visibility: showSuccessMessage ? 'visible' : 'hidden'
+    display: showSuccessMessage ? 'block' : 'none'
   };
 
   return (
