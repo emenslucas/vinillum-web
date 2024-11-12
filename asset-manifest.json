@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/vinillum-web/static/css/main.aa07fe97.css",
-    "main.js": "/vinillum-web/static/js/main.fac19dd0.js",
-    "static/js/453.8f96cb0e.chunk.js": "/vinillum-web/static/js/453.8f96cb0e.chunk.js",
-    "static/media/formbkg.svg": "/vinillum-web/static/media/formbkg.0ba53bd18b827680cff3.svg",
-    "static/media/homebkg.svg": "/vinillum-web/static/media/homebkg.2fc88536c208b9c32747.svg",
-    "index.html": "/vinillum-web/index.html",
-    "main.aa07fe97.css.map": "/vinillum-web/static/css/main.aa07fe97.css.map",
-    "main.fac19dd0.js.map": "/vinillum-web/static/js/main.fac19dd0.js.map",
-    "453.8f96cb0e.chunk.js.map": "/vinillum-web/static/js/453.8f96cb0e.chunk.js.map"
+    "main.css": "/static/css/main.4df8a6ca.css",
+    "main.js": "/static/js/main.947a1e5c.js",
+    "static/js/453.8f96cb0e.chunk.js": "/static/js/453.8f96cb0e.chunk.js",
+    "static/media/formbkg.svg": "/static/media/formbkg.0ba53bd18b827680cff3.svg",
+    "static/media/homebkg.svg": "/static/media/homebkg.2fc88536c208b9c32747.svg",
+    "index.html": "/index.html",
+    "main.4df8a6ca.css.map": "/static/css/main.4df8a6ca.css.map",
+    "main.947a1e5c.js.map": "/static/js/main.947a1e5c.js.map",
+    "453.8f96cb0e.chunk.js.map": "/static/js/453.8f96cb0e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa07fe97.css",
-    "static/js/main.fac19dd0.js"
+    "static/css/main.4df8a6ca.css",
+    "static/js/main.947a1e5c.js"
   ]
 }
