@@ -12,7 +12,7 @@ const Premium = forwardRef((props, ref) => {
       <div className="cards-container">
         <PlanCard
           type="Estándar"
-          price="USD $0.00"
+          price="FREE"
           duration="Por siempre"
           features={[
             '+Acceso a trivias semanales',
