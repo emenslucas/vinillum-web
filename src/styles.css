@@ -199,10 +199,22 @@ h1 {
   border-radius: 6px;
   padding: 32px 20px;
   width: 350px;
-  height: 350px;
   display: flex;
   flex-direction: column;
+  gap: 24px;
+}
+
+.disabledBtn{
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  color: rgba(255, 255, 255, 0.24) !important;
+  cursor: context-menu !important;
+  margin-top: auto !important;
+}
+
+.card-content{
+  display: flex;
   gap: 10px;
+  flex-direction: column;
 }
 
 #free-card {
@@ -539,6 +551,7 @@ footer {
   justify-content: center;
   align-items: center;
   height: 60px;
+  gap: 5px;
 }
 .footer-container span {
   color: rgba(255, 255, 255, 0.6);
@@ -677,6 +690,11 @@ footer {
 
   .testimonials-carousel {
     display: block;
+  }
+
+  .footer-container {
+   flex-direction: column;
+   align-items: center;
   }
 }
 

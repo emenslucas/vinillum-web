@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
-import Premium from "./pages/Premium";
+import Premium from "./pages/Plans";
 import Testimonials from "./pages/Testimonials";
 import "./styles.css";
 

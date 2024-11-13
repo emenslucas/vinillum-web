@@ -3,6 +3,7 @@ import React from 'react';
 const PlanCard = ({ type, price, duration, features, isPaid }) => {
   return (
     <div id={`${isPaid ? 'paid-card' : 'free-card'}`}>
+      <div className="card-content">
       <div className="card-title">
         <span className="plan-type">{type}</span>
         <h3>{price}</h3>
@@ -17,6 +18,9 @@ const PlanCard = ({ type, price, duration, features, isPaid }) => {
           ))}
         </ul>
       </div>
+      </div>
+      {isPaid ? <button className="customBtn">Unirme</button> : <button className="customBtn disabledBtn">Actual</button>}
+      
     </div>
   );
 };
