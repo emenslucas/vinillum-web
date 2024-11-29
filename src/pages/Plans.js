@@ -19,7 +19,7 @@ const Plans = forwardRef((props, ref) => {
             "+Reseñas ilimitadas",
             "+Insignias limitadas",
             "-Trivias personalizadas",
-            "-Logitud de reseñas ilimitadas",
+            "-Longitud de reseñas ilimitadas",
           ]}
           isPaid={false}
           isActive={[true, true, true, true, false, false]}
