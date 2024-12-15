@@ -24,45 +24,45 @@ const Contact = forwardRef((props, ref) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
-
+  
     try {
-      const form = new FormData();
-      form.append('access_key', '599e81e8-b90f-48c9-a603-b03f1016d677');
-      Object.entries(formData).forEach(([key, value]) => {
-        form.append(key, value);
-      });
-
-      const response = await fetch('https://api.web3forms.com/submit', {
+      // Enviar los datos al backend
+      const response = await fetch('https://vinillum-backend.onrender.com/submit', {
         method: 'POST',
-        body: form
+        headers: {
+          'Content-Type': 'application/json', // Especificar que los datos están en formato JSON
+        },
+        body: JSON.stringify(formData), // Convertir los datos del formulario a JSON
       });
-
+  
       const data = await response.json();
-
+  
       if (data.success) {
-        // Iniciar secuencia de transición
-        setFormOpacity(0);
+        // Manejar el éxito
+        setFormOpacity(0); // Iniciar transición
         setTimeout(() => {
           setFormVisible(false);
           setShowSuccessMessage(true);
         }, 500);
-
+  
         setFormData({
           nombre: '',
           email: '',
-          mensaje: ''
+          mensaje: '',
         });
       } else {
+        // Manejar errores enviados desde el backend
         setError('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.');
         console.error('Error response:', data);
       }
     } catch (err) {
+      // Manejar errores del lado del cliente
       console.error('Error:', err);
       setError('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.');
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false); // Habilitar el botón de envío nuevamente
     }
-  };
+  };  
 
   // Estilos para la transición del formulario
   const formStyle = {
