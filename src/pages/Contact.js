@@ -8,9 +8,25 @@ const Contact = forwardRef((props, ref) => {
   });
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState('');
+  const [emailError, setEmailError] = useState('');
   const [formVisible, setFormVisible] = useState(true);
   const [formOpacity, setFormOpacity] = useState(1);
+
+  const validateEmail = (email) => {
+    const allowedDomains = ['gmail.com', 'yahoo.com.ar', 'hotmail.com'];
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (!emailRegex.test(email)) {
+      return 'Formato de correo electrónico inválido';
+    }
+    
+    const domain = email.split('@')[1];
+    if (!allowedDomains.includes(domain)) {
+      return `Solo se permiten dominios: ${allowedDomains.join(', ')}`;
+    }
+    
+    return '';
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,28 +34,43 @@ const Contact = forwardRef((props, ref) => {
       ...prev,
       [name]: value
     }));
+
+    // Reset email error when user starts typing
+    if (name === 'email') {
+      setEmailError('');
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    const emailValidationError = validateEmail(formData.email);
+    if (emailValidationError) {
+      // Clear email input and set error
+      setFormData(prev => ({
+        ...prev,
+        email: ''
+      }));
+      setEmailError(emailValidationError);
+      return;
+    }
+
     setIsSubmitting(true);
-    setError('');
+    setEmailError('');
   
     try {
-      // Enviar los datos al backend
       const response = await fetch('https://vinillum-backend.onrender.com/submit', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json', // Especificar que los datos están en formato JSON
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData), // Convertir los datos del formulario a JSON
+        body: JSON.stringify(formData),
       });
   
       const data = await response.json();
   
       if (data.success) {
-        // Manejar el éxito
-        setFormOpacity(0); // Iniciar transición
+        setFormOpacity(0);
         setTimeout(() => {
           setFormVisible(false);
           setShowSuccessMessage(true);
@@ -51,27 +82,21 @@ const Contact = forwardRef((props, ref) => {
           mensaje: '',
         });
       } else {
-        // Manejar errores enviados desde el backend
-        setError('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.');
         console.error('Error response:', data);
       }
     } catch (err) {
-      // Manejar errores del lado del cliente
       console.error('Error:', err);
-      setError('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.');
     } finally {
-      setIsSubmitting(false); // Habilitar el botón de envío nuevamente
+      setIsSubmitting(false);
     }
   };  
 
-  // Estilos para la transición del formulario
   const formStyle = {
     opacity: formOpacity,
     transition: 'opacity 0.5s ease',
     display: formVisible ? 'block' : 'none'
   };
 
-  // Estilos para el mensaje de éxito
   const successStyle = {
     opacity: showSuccessMessage ? 1 : 0,
     transition: 'opacity 0.5s ease',
@@ -110,11 +135,15 @@ const Contact = forwardRef((props, ref) => {
             <input
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder={emailError || "Email"}
               value={formData.email}
               onChange={handleChange}
               required
               disabled={isSubmitting}
+              style={{
+                color: emailError ? 'inherit' : 'inherit'
+              }}
+              className={emailError ? 'invalid-email' : ''}
             />
           </div>
           <textarea
@@ -133,7 +162,6 @@ const Contact = forwardRef((props, ref) => {
           >
             {isSubmitting ? 'Enviando...' : 'Enviar'}
           </button>
-          {error && <p className="error-message">{error}</p>}
         </div>
       </form>
       
