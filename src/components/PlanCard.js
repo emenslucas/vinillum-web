@@ -19,7 +19,7 @@ const PlanCard = ({ type, price, duration, features, isPaid }) => {
         </ul>
       </div>
       </div>
-      {isPaid ? <button className="customBtn">Unirme</button> : <button className="customBtn disabledBtn">Actual</button>}
+      {isPaid ? <button className="customBtn">Proximanente...</button> : <button className="customBtn disabledBtn">Actual</button>}
       
     </div>
   );

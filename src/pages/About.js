@@ -7,17 +7,17 @@ const About = forwardRef((props, ref) => {
     {
       image: './assets/profile1.png',
       name: 'Facundo Neiman',
-      position: 'CEO',
+      position: 'Desarrollador',
     },
     {
       image: './assets/profile2.png',
       name: 'Lucas Emens',
-      position: 'CEO',
+      position: 'Desarrollador',
     },
     {
       image: './assets/profile3.png',
       name: 'Facundo Preiss',
-      position: 'CEO',
+      position: 'Desarrollador',
     },
   ];
 

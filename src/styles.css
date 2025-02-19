@@ -464,7 +464,7 @@ textarea::placeholder {
 }
 
 .customBtn {
-  background-color: #6528f7;
+  background-color: rgb(101, 40, 247);
   color: white;
   border: none;
   border-radius: 4px;
@@ -477,8 +477,9 @@ textarea::placeholder {
   font-family: "Inter", serif;
 }
 
-.customBtn :hover {
+.customBtn:hover {
   background-color: #6f32ff;
+  cursor: not-allowed;
 }
 
 .success-message {
@@ -883,4 +884,11 @@ footer {
 
 .invalid-email::placeholder {
   color: rgba(255, 162, 162, 0.808);
+}
+
+.testimonial-header img{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
 }
